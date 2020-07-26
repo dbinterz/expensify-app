@@ -10,9 +10,9 @@ exports[`should render ExpenseListItem 1`] = `
     </h3>
   </[object Object]>
   <p>
-    195
-     - 
-    0
+    $1.95
+    -
+    01-Jan-1970
   </p>
 </div>
 `;
@@ -25,7 +25,9 @@ exports[`should render ExpenseListItem with no data 1`] = `
     <h3 />
   </[object Object]>
   <p>
-     - 
+    $0.00
+    -
+    01-Jan-1970
   </p>
 </div>
 `;
