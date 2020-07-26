@@ -8,7 +8,6 @@ import 'react-dates/lib/css/_datepicker.css';
 import './styles/styles.scss';
 
 const store = configureStore();
-
 const jsx = (
     <Provider store={store}>
         <AppRouter />
