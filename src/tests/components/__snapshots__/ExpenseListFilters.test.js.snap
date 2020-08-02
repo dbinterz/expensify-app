@@ -9,7 +9,7 @@ exports[`should handle text change 1`] = `
   />
   <select
     onChange={[Function]}
-    value=""
+    value="date"
   >
     <option
       value="date"
@@ -117,7 +117,7 @@ exports[`should render ExpenseListFilter 1`] = `
   />
   <select
     onChange={[Function]}
-    value=""
+    value="date"
   >
     <option
       value="date"
@@ -225,7 +225,7 @@ exports[`should render ExpenseListFilter with altFilters 1`] = `
   />
   <select
     onChange={[Function]}
-    value="bills,"
+    value="amount"
   >
     <option
       value="date"

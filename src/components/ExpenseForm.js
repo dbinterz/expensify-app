@@ -11,7 +11,7 @@ export default class ExpenseForm extends React.Component{
         note: props.expense ? props.expense.note:'',
         amount: props.expense ? (props.expense.amount / 100).toString(): '',
         createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
-        focused: false,
+        calendarFocused: false,
         errorState: ''
     };
 }
@@ -35,8 +35,8 @@ export default class ExpenseForm extends React.Component{
             this.setState(()=> ({createdAt}));
         }
     }
-    onFocusChange = (focused) => {
-        this.setState(()=> ({focused}));
+    onFocusChange = ({focused}) => {
+        this.setState(()=> ({calendarFocused: focused}));
     }
     onSubmit = (e) => {
         e.preventDefault();
@@ -63,16 +63,18 @@ export default class ExpenseForm extends React.Component{
                         placeholder="Description"
                         autoFocus
                         value={this.state.description}
-                        onChange={this.onDescriptionChange}/>
+                        onChange={this.onDescriptionChange}
+                    />
                     <input
                         type='text'
                         placeholder="Amount"
                         value={this.state.amount}
-                        onChange={this.onAmountChange}/>
+                        onChange={this.onAmountChange}
+                    />
                     <SingleDatePicker
                         date={this.state.createdAt}
                         onDateChange={this.onDateChange}
-                        focused={this.state.focused}
+                        focused={this.state.calendarFocused}
                         onFocusChange={this.onFocusChange}
                         numberOfMonths={1}
                         isOutsideRange={()=> false}
@@ -81,7 +83,8 @@ export default class ExpenseForm extends React.Component{
                         placeholder="Add a note for your expense(optional)"
                         value={this.state.note}
                         onChange={this.onNoteChange}
-                    ></textarea>
+                    >
+                    </textarea>
                     <button>Add Expense</button>
                 </form>
             </div>

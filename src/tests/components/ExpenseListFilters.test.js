@@ -36,13 +36,13 @@ test('should render ExpenseListFilter with altFilters', ()=>{
 });
 
 test('should handle text change', ()=>{
-    const value = 'Some new note';
+    const value = 'Some new notes here';
     wrapper.find('input').simulate('change', {
         target: {value}
     });
     expect(setTextFilter).toHaveBeenLastCalledWith(value);
     expect(wrapper).toMatchSnapshot();
-})
+});
 
 test('should sort by date', () => {
     const value = 'date';
@@ -57,9 +57,6 @@ test('should sort by date', () => {
 
 test('should sort by amount', () => {
     const value = 'amount';
-    wrapper.setProps({
-        filters: altFilters
-    });
     wrapper.find('select').simulate('change', {
         target: {value}
     });

@@ -37,7 +37,7 @@ test('should setup setTextFilter with provided values', () => {
     const action=setTextFilter('bill');
     expect(action).toEqual({
         type:'SET_TEXT_FILTER',
-        update: 'bill'
+        text: 'bill'
     });
 });
 
@@ -45,6 +45,6 @@ test('should setup setTextFilter with default values', () => {
     const action=setTextFilter();
     expect(action).toEqual({
         type:'SET_TEXT_FILTER',
-        update: ''
+        text: ''
     });
 });
